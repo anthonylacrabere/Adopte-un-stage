@@ -1,0 +1,647 @@
+@import url('https://fonts.googleapis.com/css?family=Advent+Pro&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+/*font-family: 'Advent Pro', sans-serif; */
+/*font-family: 'Roboto', sans-serif; */
+
+@import url('https://fonts.googleapis.com/css?family=Dosis&display=swap');
+html {
+    height: 100%;
+}
+
+body {
+    font-weight: 500;
+    color: #97add7;
+    font-family: 'Advent Pro', sans-serif;
+    font-size: 25px;
+    background: rgba(0,0,0,.05);
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* 
+SWIPE INFO 
+*/
+.swipe_info {
+    color: white;
+    background: #97add7;
+    z-index: 99;
+    padding: 10px;
+    border: 1px solid white;
+    border-radius: 5px;
+    font-size: 18px;
+    width: 350px;
+
+    position: absolute;
+    right: 5%;
+    top: 10%;    
+
+    animation-name: swipeInfoDisplay;
+    animation-duration: .5s;
+}
+
+@keyframes swipeInfoDisplay {
+    0% {right: -100%;}
+    100% {right: 5%;}
+  }
+
+
+
+.swipe_info_button {
+    background: #97add7;
+    border: 1px solid white;
+    border-radius: 5px;
+    color: white;
+}
+
+.swipe_info_button:hover {
+    background: white;
+    color: #97add7;
+    border: 1px solid white;
+}
+
+.swipe_like_info {
+    color: #97add7;
+    position: absolute;
+    top: 45%;
+    right: 15%;
+
+    font-size: 50px;
+}
+
+.swipe_dislike_info {
+    color: #97add7;
+    position: absolute;
+    left: 15%;
+    top: 45%;
+
+    font-size: 50px;
+}
+
+.swipe_like_animation {
+    animation-name: likeOrDislike;
+    animation-duration: 1s;
+}
+
+@keyframes likeOrDislike {
+    0% {color: #97add7;}
+    50% {color: red;}
+    100% {color: #97add7;}
+  }
+
+
+.infoBulle {
+    position: absolute;
+    top: 60px;
+    right: 20%;
+    font-size: 18px;
+    padding: 10px;
+    color: white;
+    background: #97add7;
+    border-radius: 5px;
+    border:1px solid white;
+
+    animation-name: infoBulle;
+    animation-duration: .5s;
+}
+
+@keyframes infoBulle {
+    0% {top: -30px}
+    100% {top: 60px;}
+  }
+/*
+CARD
+ */
+
+.user_card{
+    position: relative;
+    margin: auto;
+    width: 375px;
+    min-height: 702.1px;
+    font-size: 20px;
+    font-family: 'Advent Pro', sans-serif;
+    color: white;
+
+    /*background: #FFB75E;  /* fallback for old browsers */
+    /*background: -webkit-linear-gradient(to right, #ED8F03, #FFB75E);  /* Chrome 10-25, Safari 5.1-6 */
+    /*background: linear-gradient(to right, #ED8F03, #FFB75E); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background-image: linear-gradient(to right, #97add7, #93aed8, #8eafd9, #8ab0da, #85b1db, #82b0db, #7eaedb, #7baddb, #79aada, #77a6d9, #76a3d8, #759fd7);
+}
+
+.user_banner {
+    height: 172px;
+
+    background: #3A3E42;
+}
+
+#user_picture {
+    position: absolute;
+    top: 95px;
+    left: 115px;
+
+    height: 150px;
+    width: 150px;
+
+    z-index: 1;
+
+    box-shadow: 0 5px 10px 0 rgba(0,0,0,0.7);
+    border: 4px solid #97add7;
+    border-radius: 50%;
+}
+
+#user_picture:hover {
+    box-shadow: 0 5px 25px 0px rgba(0,0,0,0.7);
+    transition: ease .3s;
+}
+
+
+.user_card_body {
+    display: flex;
+    flex-direction: column;
+
+    /*height: 260px;*/
+
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 90px;
+
+    background: #3A3E42;
+    box-shadow: 0 -10px 15px 0px rgba(0,0,0,0.2);
+}
+
+.user_info{
+    text-align: center;
+}
+
+.user_desc {
+    padding: 20px;
+    font-size: 18px;
+}
+
+.user_desc > .row p {
+    margin: 5px;
+font-size: 16px;
+    word-break: break-word;
+    text-align: justify;
+}
+
+.fa-user-edit {
+    position: absolute;
+    right: 70px;
+    top: 220px;
+
+    font-size: 20px;
+
+    text-shadow: 0 5px 15px rgba(0,0,0,0.5);
+
+    background: linear-gradient(to right, #97add7, #93aed8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.fa-user-edit:hover {
+    background: #79aada ;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* END CARD */
+
+
+
+.index_nav {
+    background-image: linear-gradient(to right, #97add7, #93aed8, #8eafd9, #8ab0da, #85b1db, #82b0db, #7eaedb, #7baddb, #79aada, #77a6d9, #76a3d8, #759fd7);
+   /* background: white;*/
+    box-shadow: 0 4px 18px 0 rgba(0,0,0,.12),0 7px 10px -5px rgba(0,0,0,.15);
+}
+
+.index_nav a {
+    color: white;
+}
+
+/* FORM */
+.form_btn {
+    color: white;
+    border: none;
+    background: #97add7;
+}
+
+.form_edit_btn {
+    background: white;
+    color: #97add7;
+    height: 50px;
+    width: 100px;
+}
+
+.form_btn:hover {
+    background:  #759fd7;
+    color: white;
+}
+
+.form_container form {
+    max-width: 360px;
+    width: 450px;
+}
+
+.form_container {
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.form_container_connexion {
+    color: #97add7;
+    margin-bottom: 20px;
+}
+
+.form_container_register {
+    height: 75vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+}
+
+.form_container_register form {
+    max-width: 340px;
+    width: 450px;
+}
+
+.form-check label {
+    color: #97add7;
+}
+
+.pw_help {
+    font-size: 14px;
+}
+
+/*
+ NAV
+ */
+.sidenav {
+    box-shadow: 0 5px 10px 0 rgba(0,0,0,0.7);
+    height: 100%; /* 100% Full-height */
+    width: 0; /* 0 width - change this with JavaScript */
+    position: fixed; /* Stay in place */
+    z-index: 99; /* Stay on top */
+    top: 0; /* Stay at the top */
+    right: 0;
+    background-color:#3A3E42;
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 60px; /* Place content 60px from the top */
+    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+}
+
+/* The navigation menu links */
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: white;
+    display: block;
+    transition: 0.3s;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover:not(:first-child) {
+    background-image: linear-gradient(to right, #97add7, #93aed8, #8eafd9, #8ab0da, #85b1db, #82b0db, #7eaedb, #7baddb, #79aada, #77a6d9, #76a3d8, #759fd7);
+    color: white;
+}
+
+.sidenav a:hover:first-child {
+    color: #97add7;
+}
+
+/* Position and style the close button (top right corner) */
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 25px;
+    margin-left: 50px;
+}
+
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+}
+
+.fa-bars {
+    cursor: pointer;
+    color: white;
+}
+
+.fa-bars:hover {
+    color: #97add7;
+}
+
+/*
+FOOTER
+ */
+
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f3f3f3;
+
+    height: 100px;
+    font-size:20px;
+    margin-top: auto;
+}
+
+footer a {
+    color: #97add7;
+}
+
+footer a:hover {
+    text-decoration: none;
+    color: #7eaedb;
+
+}
+footer p {
+    color: #97add7;
+}
+/*
+FORM AUTOCOMPLETE
+ */
+.ap-dataset-places {
+    color: black;
+    font-size: 14px;
+    font-family: Roboto, sans-serif;
+}
+
+.swiper-container {
+    width: 375px;
+    margin: auto !important;
+}
+
+/* ADMIN */
+.skill_card_title {
+    color: #97add7;
+    text-align: center;
+}
+
+.card_header {
+    color: #97add7;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card_header a {
+    text-decoration: none;
+    color: #97add7;
+    margin: 7px;
+}
+
+.card_header a:hover {
+    color: #759fd7;
+}
+
+.skill_card > ul > li {
+    color: #97add7;
+    font-size: 18px;
+}
+
+.skill_card > ul > li:hover {
+    background: rgba(0,0,0,.05);
+}
+
+.skill_card_li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.skill_card_li > div > a i {
+    color : #97add7; 
+    font-size: 20px;
+}
+
+.skill_card_li > div > a i:hover {  
+    font-size: 22px;
+    color: #759fd7;
+}
+
+.cards_panel_container {
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: space-around;
+}
+
+.cards_panel_container .card {
+    margin: 25px;
+    padding: 25px;
+}
+
+.cards_panel_container > .card h4 {
+    color : #97add7;
+}
+
+.cards_panel_container .card:hover {
+    background: rgba(0,0,0,.05);
+}
+
+.cards_panel_container a {
+    text-decoration: none;
+}
+
+/* MODAL */
+.modal_form {
+    color: #97add7;
+}
+
+/*
+PROFIL EDIT
+*/
+.form_container_edit {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.form_container_edit form {
+max-width: 600px;
+}
+
+.form_container_edit form input:nth-last-child(){
+   width: 100%;
+}
+
+.profil_edit_avatar {
+    border-radius: 50%;
+    height: 150px;
+    width: 150px;
+} 
+
+/*
+PROFIL MENU
+*/
+
+.profil_menu_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.profil_menu_container a {
+    text-decoration: none;
+    background: #97add7;
+    color: white;
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid white;
+
+    border-radius: 5px;
+}
+
+.profil_menu_container a:hover {
+ 
+    background: white;
+    color: #97add7;
+    border: 1px solid #97add7;
+    transition: ease .5s;
+}
+
+/*
+CARD DEMO
+*/
+  
+  .demo__card {
+    z-index: 2;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    
+    background-image: linear-gradient(to right, #97add7, #93aed8, #8eafd9, #8ab0da, #85b1db, #82b0db, #7eaedb, #7baddb, #79aada, #77a6d9, #76a3d8, #759fd7);
+  }
+
+  .hidden {
+      display: none;
+  }
+
+  .demo__card.reset {
+    transition: -webkit-transform 0.3s;
+    transition: transform 0.3s;
+    transition: transform 0.3s, -webkit-transform 0.3s;
+    -webkit-transform: translateX(0) !important;
+            transform: translateX(0) !important;
+  }
+  .demo__card.reset .demo__card__choice {
+    transition: opacity 0.3s;
+    opacity: 0 !important;
+  }
+  .demo__card.inactive {
+    transition: -webkit-transform 0.3s;
+    transition: transform 0.3s;
+    transition: transform 0.3s, -webkit-transform 0.3s;
+  }
+  .demo__card.to-left {
+    -webkit-transform: translateX(-30rem) rotate(-30deg) !important;
+            transform: translateX(-30rem) rotate(-30deg) !important;
+  }
+  .demo__card.to-right {
+    -webkit-transform: translate(30rem) rotate(30deg) !important;
+            transform: translate(30rem) rotate(30deg) !important;
+  }
+  .demo__card.below {
+    z-index: 1;
+  }
+
+  .demo__card__we {
+    text-align: center;
+    font-size: 2.2rem;
+    line-height: 11.5rem;
+  }
+  .demo__card__choice {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+  }
+  .demo__card__choice:before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 2rem;
+    height: 2rem;
+    margin-left: -1rem;
+    color: #fff;
+    border-radius: 50%;
+    box-shadow: -2rem -3rem #fff, 2rem -3rem #fff;
+  }
+  .demo__card__choice:after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 4rem;
+    height: 1.5rem;
+    margin-left: -2rem;
+    border: 0.6rem solid #fff;
+    border-bottom: none;
+    border-top-left-radius: 1.5rem;
+    border-top-right-radius: 1.5rem;
+  }
+  .demo__card__choice.m--reject {
+    background: #FF945A;
+  }
+  .demo__card__choice.m--like {
+    background: #B1DA96;
+  }
+  .demo__card__choice.m--like:after {
+    -webkit-transform: scaleY(-1);
+            transform: scaleY(-1);
+  }
+  .demo__card__drag {
+    z-index: 5;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    cursor: -webkit-grab;
+    cursor: grab;
+  }
+  .demo__tip {
+    text-align: center;
+    font-size: 2.2rem;
+  }
+  
+.overflow_scroll {
+    height: 60vh;
+    overflow: scroll;
+}
+
+.contact_icon {
+    color: black;
+    font-size: 50px;
+}
+
+.reload {
+    color: #97add7;
+    font-size: 60px;
+    position: absolute;
+    cursor: pointer;
+
+    top: 40%;
+    left: 48%;
+}
+
+.home_container {
+    height: 80vh;
+    display: flex;
+}
